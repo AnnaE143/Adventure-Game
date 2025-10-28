@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,6 +49,7 @@ namespace Adventure_Game
             decision52Button.Enabled = false;
             decision53Button.Enabled = false;
 
+            //end the game should the player be out of lives
             if (SharedVar.life < 1)
             {
                 storyLabel2.Text = "Game Over";
@@ -55,8 +57,18 @@ namespace Adventure_Game
                 decision52Button.Visible = false;
                 decision53Button.Visible = false;
                 continueButton.Visible = false;
+                storyLabel2.Text = "The middle way was a trap and you fell for it thinking no one would be there.";
+
+                Thread.Sleep(1000);
+                Refresh();
+
+                this.Close();
+
+                Application.Restart();
+                Environment.Exit(0);
+
             }
-            
+
             storyLabel2.Text = "The middle way was a trap and you fell for it thinking no one would be there.";
         }
 

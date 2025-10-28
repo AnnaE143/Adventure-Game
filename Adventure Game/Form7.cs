@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,6 +56,15 @@ namespace Adventure_Game
                 decision61Button.Visible = false;
                 decision62Button.Visible = false;
                 continueButton.Visible = false;
+                storyLabel2.Text = "All the ways around the canyon were guarded by villagers.";
+
+                Thread.Sleep(1000);
+                Refresh();
+
+                this.Close();
+
+                Application.Restart();
+                Environment.Exit(0);
             }
 
             storyLabel2.Text = "All the ways around the canyon were guarded by villagers.";

@@ -31,6 +31,7 @@ namespace Adventure_Game
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            //set all the labels that they show the correct stats once the form opens
             continueButton.Enabled = false;
             playerNameLabel.Text = SharedVar.playerName;
             powerLabel.Text = "Power: " + SharedVar.power.ToString();

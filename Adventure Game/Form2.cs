@@ -19,6 +19,7 @@ namespace Adventure_Game
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            //so the player can't skip the decision
             continueButton.Enabled = false;
             playerNameLabel.Text = SharedVar.playerName;
             timeRemainingLabel.Text = "Time Remaining: " + SharedVar.timeRemaining.ToString();
@@ -32,12 +33,15 @@ namespace Adventure_Game
         private void decision11Button_Click(object sender, EventArgs e)
         {
             continueButton.Enabled = true;
+            //change the variables and show it on the labels
             SharedVar.wisdom += 10;
             wisdomLabel.Text = "Wisdom: " + SharedVar.wisdom.ToString();
             SharedVar.timeRemaining -= 1;
+            //so that the player can only click one button
             decision11Button.Enabled = false;
             decision12Button.Enabled = false;
             decision13Button.Enabled = false;
+            //explaijn what happened after the choice
             storyLabel2.Text = "The tome contained precious ancient knowledge.";
         }
 
@@ -47,6 +51,7 @@ namespace Adventure_Game
             Form3 form3 = new Form3();
             form3.Show();
 
+            //so that there are not all forms open at the same time
             this.Close();
         }
 

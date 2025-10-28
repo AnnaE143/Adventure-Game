@@ -14,7 +14,7 @@ namespace Adventure_Game
 
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -29,21 +29,23 @@ namespace Adventure_Game
             storyLabel.Visible = true;
             continueButton.Visible = true;
 
-            
+
         }
 
         private void continueButton_Click(object sender, EventArgs e)
         {
+            //set the playername
             SharedVar.playerName = nameTextBox.Text;
 
+            //create new form and open it
             Form2 form2 = new Form2();
             form2.Show();
-            
+
         }
     }
     public static class SharedVar
     {
-        //Global Variables
+        //Global Variables for all forms
         public static string playerName;
         public static int power = 100;
         public static int morality = 0;

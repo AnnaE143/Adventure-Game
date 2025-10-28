@@ -36,6 +36,7 @@ namespace Adventure_Game
 
         private void checkEnding()
         {
+            //possible endings
             if ((SharedVar.power > 129) && (SharedVar.morality < 1) && (SharedVar.companionFound = true))
             {
                 storyLabel2.Text = "You survived and managed to grow your vampiric strenght. Now you can easily fight against the villagers and continue to live your eternal life. But because your actions destroyed your morality you become a mindless beast and eat your bat friend.";
@@ -76,6 +77,7 @@ namespace Adventure_Game
 
         private void endGameButton_Click(object sender, EventArgs e)
         {
+            //Show the ending layout
             storyLabel3.Visible = true;
             storyLabel2.Visible = false;
             timeRemainingLabel.Visible = false;
@@ -94,6 +96,7 @@ namespace Adventure_Game
         {
             this.Close();
 
+            //restart the game
             Application.Restart();
             Environment.Exit(0);
         }
